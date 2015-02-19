@@ -44,7 +44,7 @@ struct Theme {
         UINavigationBar.appearance().tintColor = buttonColor
         
         let font = UIFont(name: fontName, size: fontSize)
-        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: textColor, NSFontAttributeName: font]
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: textColor, NSFontAttributeName: font!]
     }
     
     
@@ -63,8 +63,7 @@ struct Theme {
         UITabBar.appearance().barTintColor = barColor;
         UITabBar.appearance().tintColor = textColor;
         
-        let font = UIFont(name: fontName, size: fontSize)
-        UITabBarItem.appearance().setTitleTextAttributes([NSFontAttributeName: font], forState: .Normal)
+        UITabBarItem.appearance().setTitleTextAttributes([NSFontAttributeName: UIFont(name: fontName, size: fontSize)!], forState: .Normal)
     }
     
     // UIButton
